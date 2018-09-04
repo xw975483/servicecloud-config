@@ -1,0 +1,81 @@
+﻿spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8001
+
+spring:
+  profiles: dev
+  application:
+    name: service-config-dept-client
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/clouddb01
+    username: root
+    password:  1996
+    dbcp2:
+      min-idle: 5                                          
+      initial-size: 5                                       
+      max-total: 5                                          
+      max-wait-millis: 200
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        
+  type-aliases-package: com.entity    
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       
+
+eureka:
+  client:
+    server-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true 
+
+info: 
+  app.name: atguigu-microservicecloud-config01
+  company.name: www.atguigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+---
+server:
+  port: 8001
+
+spring:
+  profiles: test
+  application:
+    name: service-config-dept-client
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/clouddb01
+    username: root
+    password:  1996
+    dbcp2:
+      min-idle: 5                                          
+      initial-size: 5                                       
+      max-total: 5                                          
+      max-wait-millis: 200
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        
+  type-aliases-package: com.entity    
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       
+
+eureka:
+  client:
+    server-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true 
+
+info: 
+  app.name: atguigu-microservicecloud-config01
+  company.name: www.atguigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
