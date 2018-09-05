@@ -9,7 +9,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: servicecloud-config-dept-client
+    name: servicecloud-dept
   driver-class-name: com.mysql.jdbc.Driver             
     url: jdbc:mysql://localhost:3306/clouddb01            
     username: root
@@ -46,7 +46,7 @@ server:
 spring:
   profiles: test
   application:
-    name: servicecloud-config-dept-client
+    name: servicecloud-dept
   driver-class-name: com.mysql.jdbc.Driver             
     url: jdbc:mysql://localhost:3306/clouddb02            
     username: root
